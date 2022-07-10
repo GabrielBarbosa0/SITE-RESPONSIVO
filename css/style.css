@@ -41,7 +41,7 @@ a:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #28292B;
+    background: var(--primary-color);
 }
 
 #menu{
@@ -67,7 +67,7 @@ a:hover{
         width: 100%;
         top: 70px;
         right: 0;
-        background: #28292B;
+        background:var(--primary-color);
         z-index: 1000;
         height: 0;
         transition: .6s;
@@ -124,7 +124,11 @@ a:hover{
         top: -7px;
     }
 }
+header{
+    max-width: 1440px;
+}
 
 body{
     background: url(/image/background.jpg) no-repeat right center fixed;
+    font-family: var(--fonte-padrao);
 }
