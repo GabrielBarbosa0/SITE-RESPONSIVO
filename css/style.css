@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 :root{
     /*========== Colors ==========*/
@@ -18,93 +17,110 @@
 }
 
 a{
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     text-decoration: none;
+    font-family: var(--fonte-padrao);
     transition: 0.3s;
 }
 
-a:houver{
+a:hover{
     opacity: 0.7;
 }
 
-.logo{
-    font-size: 24px;
+#logo{
+    font-size: 1.5rem;
+    /* font-weight: bold; */
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 }
 
-nav{
+#header{
+    box-sizing: border-box;
+    height: 70px;
+    padding: 1rem;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    font-family: var(--fonte-padrao);
-    background: #000000;
-    height: 8vh;
+    justify-content: space-between;
+    background: #28292B;
 }
 
-main{
-    background: url("../image/background.jpg") 
-    no-repeat center center;
-    background-size: cover;
-    height: 92vh;
-    font-family: var(--fonte-padrao);
-}
-
-.nav-list{
-    list-style: none;
+#menu{
     display: flex;
+    list-style: none;
+    gap: .5rem;
 }
 
-.nav-list li{
-    letter-spacing: 3px;
-    margin-left: 32px;
+#menu a{
+    display: block;
+    padding: .3rem;
 }
 
-.mobile-menu{
+#btn-mobile{
     display: none;
-    cursor: pointer;
-}
-.mobile-menu div{
-    width: 32px;
-    height: 2px;
-    background: #fff;
-    margin: 8px;
 }
 
-@media (max-widht: 999px) {
-    body{
-        overflow: hidden;
-    }
-    .nav-list {
-        position: absolute;
-        top: 8vh;
-        right: 0;
-        width: 50vw;
-        height: 92vh;
-        background: #000000;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%);
-    }
-    .nav-list li{
-        margin-left: 0;
-        opacity: 0;
-    }
-
-    .mobile-menu{
+@media (max-width: 600px){
+    
+    #menu{
         display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0;
+        background: #28292B;
+        z-index: 1000;
+        height: 0;
+        transition: .6s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    #nav.active #menu{
+        visibility: visible;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    #menu a{
+        padding: 1.rem 0;
+        margin: 0 1rem;
+    }
+
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        gap: .5rem;
+    }
+    /* Icone de Hamburguer feito com CSS */
+    #hamburger{
+        display: block;
+        border-top: 2px solid;
+        width: 20px;
+    }
+    #hamburger::after, #hamburger::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #nav.active #hamburger{
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::before{
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburger::after{
+        transform: rotate(-135deg);
+        top: -7px;
     }
 }
-
-.nav-list.acitive{
-    transform: translateX(0);
-}
-
-
-
-p{
-    color: white;
-}
-
-
