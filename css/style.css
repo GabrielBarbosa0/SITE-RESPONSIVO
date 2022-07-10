@@ -124,3 +124,7 @@ a:hover{
         top: -7px;
     }
 }
+
+body{
+    background: url(/image/background.jpg) no-repeat right center fixed;
+}
