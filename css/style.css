@@ -3,28 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
-@font-face{
-    font-family: 'Android';
-    src: url('/font/idroid.otf');
-    font-weight: normal;
-}
-
 :root{
-
     /*========== Colors ==========*/
-    --primary-color:#28292B ;
-    --primary-color-light: ;
-    --secondary-color: ;
-    --acent-color: ;
-    --white-color: ;
-    --black-color: ;
-
+    --primary-color:#28292B;
+    
     /*========== Font and typography ==========*/
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
     --fonte-padrao:  'Inter', Arial, Helvetica, sans-serif;
-    --fonte-destaque: 'Inter', cursive;
-    --fonte-android:'Android', cursive;
-    --body-font: Arial, Verdana, Helvetica, sans-serif;
 }
 
 *{
@@ -33,7 +18,7 @@
 }
 
 a{
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -57,6 +42,14 @@ nav{
     height: 8vh;
 }
 
+main{
+    background: url("../image/background.jpg") 
+    no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+    font-family: var(--fonte-padrao);
+}
+
 .nav-list{
     list-style: none;
     display: flex;
@@ -68,7 +61,7 @@ nav{
 }
 
 .mobile-menu{
-    display: block;
+    display: none;
     cursor: pointer;
 }
 .mobile-menu div{
@@ -76,10 +69,6 @@ nav{
     height: 2px;
     background: #fff;
     margin: 8px;
-}
-
-.nav-list.acitive{
-    transform: translateX(0);
 }
 
 @media (max-widht: 999px) {
@@ -102,15 +91,17 @@ nav{
         margin-left: 0;
         opacity: 0;
     }
+
+    .mobile-menu{
+        display: block;
+    }
 }
 
-main{
-    background: url("../image/background.jpg") 
-    no-repeat center center;
-    background-size: cover;
-    height: 92vh;
-    font-family: var(--fonte-padrao);
+.nav-list.acitive{
+    transform: translateX(0);
 }
+
+
 
 p{
     color: white;
