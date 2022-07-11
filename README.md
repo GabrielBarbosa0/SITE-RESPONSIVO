@@ -1,2 +1,2 @@
 #  SITE-RESPONSIVO
- Criando um site responsivo com HTML e CSS
+ Criando um site responsivo com HTML, CSS e JAVASCRIPT.
