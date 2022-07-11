@@ -126,7 +126,8 @@ a:hover{
 }
 header{
     max-width: 1440px;
-    text-align:  right;
+    text-align:  center;
+    line-height: 5.5rem;
 }
 
 body{
