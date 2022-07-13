@@ -4,14 +4,16 @@
 
 :root{
     /*========== Colors ==========*/
-    --primary-color:#28292B;
+    --primary-color:#000000;
+    /* #28292B */
     
     /*========== Font and typography ==========*/
     /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
     --fonte-padrao:  'Inter', Arial, Helvetica, sans-serif;
 }
 
-*{
+*{  
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -36,9 +38,9 @@ a:hover{
 
 #header{
     box-sizing: border-box;
-    height: 70px;
-    padding: 1rem;
-    display: flex;
+    /* height: 70px;
+    padding: 1rem; */
+    /* display: flex; */
     align-items: center;
     justify-content: space-between;
     background: var(--primary-color);
@@ -59,11 +61,24 @@ a:hover{
     display: none;
 }
 
+
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    /* margin: 0 1rem; */
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
 @media (max-width: 600px){
     
     #menu{
-        display: block;
+        display: flex;
+        flex-direction: column;
         position: absolute;
+        gap: 60px;
         width: 100%;
         top: 70px;
         right: 0;
@@ -73,20 +88,22 @@ a:hover{
         transition: .6s;
         visibility: hidden;
         overflow-y: hidden;
+        text-align:  center;
     }
+
     #nav.active #menu{
         visibility: visible;
         height: calc(100vh - 70px);
         overflow-y: auto;
     }
     #menu a{
-        padding: 1.rem 0;
+        padding: 1rem 0;
         margin: 0 1rem;
     }
 
     #btn-mobile{
         display: flex;
-        padding: .5rem 1rem;
+        /* padding: .5rem 1rem; */
         font-size: 1rem;
         border: none;
         background: none;
@@ -94,6 +111,7 @@ a:hover{
         cursor: pointer;
         gap: .5rem;
     }
+
     /* Icone de Hamburguer feito com CSS */
     #hamburger{
         display: block;
@@ -123,14 +141,24 @@ a:hover{
         transform: rotate(-135deg);
         top: -7px;
     }
-}
-header{
-    max-width: 1440px;
-    text-align:  center;
-    line-height: 5.5rem;
+
+    .nav-container{
+        margin: 0 1rem;
+    }
+
 }
 
+
+@media (max-width: 1200px){
+    .nav-container{
+       margin: 0 1rem;
+    }
+}
+
+
+
+
+
 body{
-    background: url(/image/background.jpg) no-repeat right center fixed;
     font-family: var(--fonte-padrao);
 }
